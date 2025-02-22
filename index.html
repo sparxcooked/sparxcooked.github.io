@@ -92,9 +92,12 @@
 
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 4rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .product-card {
@@ -105,6 +108,10 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: slideUp 0.5s ease-out forwards;
             opacity: 0;
+            height: 250px; /* Fixed height */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .product-card:hover {
@@ -116,11 +123,13 @@
             color: #2c3e50;
             margin-bottom: 1rem;
             font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
         .product-card p {
             color: #7f8c8d;
             line-height: 1.6;
+            flex-grow: 1;
         }
 
         @keyframes fadeIn {
@@ -171,6 +180,15 @@
 
             h1 {
                 font-size: 2.5rem;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                height: auto;
+                min-height: 250px;
             }
         }
     </style>
