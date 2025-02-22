@@ -1,245 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Download our homework helper tools and extensions for various platforms and browsers.">
-    <title>Download - HOMEWORK HELPERS</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Download our homework helper tools and extensions for various platforms and browsers." />
+  <title>Download - HOMEWORK HELPERS</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-        body {
-            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-            min-height: 100vh;
-            color: #2d3436;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+    body {
+      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+      min-height: 100vh;
+      color: #2d3436;
+    }
 
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .logo {
-            font-weight: 700;
-            color: #000;
-            text-decoration: none;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
+    .logo {
+      font-weight: 700;
+      color: #000;
+      text-decoration: none;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        .nav-links a {
-            color: #000;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-        }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
 
-        .nav-links a:hover {
-            color: #6c5ce7;
-        }
+    .nav-links a {
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            padding-top: 6rem;
-        }
+    .nav-links a:hover {
+      color: #6c5ce7;
+    }
 
-        header {
-            text-align: center;
-            padding: 4rem 0;
-            animation: fadeIn 1s ease-in;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      padding-top: 6rem;
+    }
 
-        h1 {
-            font-size: 3.5rem;
-            color: #2d3436;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
+    header {
+      text-align: center;
+      padding: 4rem 0;
+      animation: fadeIn 1s ease-in;
+    }
 
-        .downloads {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    h1 {
+      font-size: 3.5rem;
+      color: #2d3436;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
 
-        .product {
-            margin-bottom: 3rem;
-            animation: slideUp 0.5s ease-out forwards;
-            opacity: 0;
-        }
+    .downloads {
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        .product:nth-child(1) { animation-delay: 0.1s; }
-        .product:nth-child(2) { animation-delay: 0.2s; }
-        .product:nth-child(3) { animation-delay: 0.3s; }
-        .product:nth-child(4) { animation-delay: 0.4s; }
+    .product {
+      margin-bottom: 3rem;
+      animation: slideUp 0.5s ease-out forwards;
+      opacity: 0;
+    }
 
-        .product-name {
-            font-size: 1.8rem;
-            color: #2d3436;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
+    .product:nth-child(1) { animation-delay: 0.1s; }
+    .product:nth-child(2) { animation-delay: 0.2s; }
+    .product:nth-child(3) { animation-delay: 0.3s; }
+    .product:nth-child(4) { animation-delay: 0.4s; }
 
-        .product-status {
-            font-size: 1.1rem;
-            color: #e17055;
-            margin-bottom: 1rem;
-        }
+    .product-name {
+      font-size: 1.8rem;
+      color: #2d3436;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
 
-        .product-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            margin-left: 1rem;
-        }
+    .product-status {
+      font-size: 1.1rem;
+      color: #e17055;
+      margin-bottom: 1rem;
+    }
 
-        .download-link {
-            color: #2d3436;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
-        }
+    .product-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-left: 1rem;
+    }
 
-        .download-link:hover {
-            color: #6c5ce7;
-        }
+    .download-link {
+      color: #2d3436;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+    }
 
-        .download-link::before {
-            content: '→';
-            font-size: 1.2rem;
-        }
+    .download-link:hover {
+      color: #6c5ce7;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    .download-link::before {
+      content: '→';
+      font-size: 1.2rem;
+    }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .scroll-arrow {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      color: #000;
+      border: 2px solid #000;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.5s ease;
+      opacity: 1;
+      z-index: 1000;
+    }
 
-        @media (max-width: 768px) {
-            .nav-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
+    .scroll-arrow.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
 
-            .navbar {
-                padding: 1rem;
-            }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-            h1 {
-                font-size: 2.5rem;
-            }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            .container {
-                padding: 1rem;
-                padding-top: 6rem;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .nav-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .navbar {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .container {
+        padding: 1rem;
+        padding-top: 6rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="/" class="logo">SRPGUY</a>
-            <div class="nav-links">
-                <a href="https://github.com/srpguy-dev/srpguy-dev.github.io" target="_blank">GitHub</a>
-                <a href="https://discord.gg/srpguy" target="_blank">Discord</a>
-                <a href="/download">Download</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <header>
-            <h1>Downloads</h1>
-        </header>
-
-        <section class="downloads">
-            <div class="product">
-                <h2 class="product-name">AALDEV-SPARX MATHS</h2>
-                <p class="product-status"><a href="/status/sparxmaths">Status</a></p>
-                <div class="product-links">
-                    <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
-                    <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
-                    <a href="/nyr" class="download-link">Install .exe (Windows x64)</a>
-                    <a href="/nyr" class="download-link">Install .deb (Linux x64)</a>
-                    <a href="/nyr" class="download-link">Install .AppImage (Linux x64)</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <h2 class="product-name">AALDEV-SPARX READER</h2>
-                <p class="product-status"><a href="/status/sparxreader">Status</a></p>
-                <div class="product-links">
-                    <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
-                    <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <h2 class="product-name">AALDEV-SPARX SCIENCE</h2>
-                <p class="product-status"><a href="/status/sparxscience">Status</a></p>
-                <div class="product-links">
-                    <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
-                    <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <h2 class="product-name">SRPGUY SENECA</h2>
-                <p class="product-status"><a href="/status/senecalearning">Status</a></p>
-                <div class="product-links">
-                    <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
-                    <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
-                </div>
-            </div>
-        </section>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="/" class="logo">SRPGUY</a>
+      <div class="nav-links">
+        <a href="https://github.com/srpguy-dev/srpguy-dev.github.io" target="_blank">GitHub</a>
+        <a href="https://discord.gg/srpguy" target="_blank">Discord</a>
+        <a href="/download">Download</a>
+      </div>
     </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>Downloads</h1>
+    </header>
+
+    <section class="downloads">
+      <div class="product">
+        <h2 class="product-name">AALDEV-SPARX MATHS</h2>
+        <p class="product-status"><a href="/status/sparxmaths">Status</a></p>
+        <div class="product-links">
+          <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
+          <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
+          <a href="/nyr" class="download-link">Install .exe (Windows x64)</a>
+          <a href="/nyr" class="download-link">Install .deb (Linux x64)</a>
+          <a href="/nyr" class="download-link">Install .AppImage (Linux x64)</a>
+        </div>
+      </div>
+
+      <div class="product">
+        <h2 class="product-name">AALDEV-SPARX READER</h2>
+        <p class="product-status"><a href="/status/sparxreader">Status</a></p>
+        <div class="product-links">
+          <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
+          <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
+        </div>
+      </div>
+
+      <div class="product">
+        <h2 class="product-name">AALDEV-SPARX SCIENCE</h2>
+        <p class="product-status"><a href="/status/sparxscience">Status</a></p>
+        <div class="product-links">
+          <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
+          <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
+        </div>
+      </div>
+
+      <div class="product">
+        <h2 class="product-name">SRPGUY SENECA</h2>
+        <p class="product-status"><a href="/status/senecalearning">Status</a></p>
+        <div class="product-links">
+          <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
+          <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <button class="scroll-arrow" id="scrollArrow">↓</button>
+
+  <script>
+    const scrollArrow = document.getElementById('scrollArrow');
+
+    scrollArrow.addEventListener('click', () => {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) {
+        scrollArrow.classList.add('hidden');
+      } else {
+        scrollArrow.classList.remove('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
