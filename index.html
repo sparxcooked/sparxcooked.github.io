@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We integrate AI and NON-AI into our applications to get accurate answers to help out with your homeworks. Worry no more about Sparx or Seneca.">
+    <title>HOMEWORK HELPERS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #34495e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #2980b9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: 6rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #34495e;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-card h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .product-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .products .product-card:nth-child(1) { animation-delay: 0.2s; }
+        .products .product-card:nth-child(2) { animation-delay: 0.4s; }
+        .products .product-card:nth-child(3) { animation-delay: 0.6s; }
+        .products .product-card:nth-child(4) { animation-delay: 0.8s; }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">SRPGUY</a>
+            <div class="nav-links">
+                <a href="https://github.com/srpguy-dev/srpguy-dev.github.io" target="_blank">GitHub</a>
+                <a href="https://discord.gg/srpguy" target="_blank">Discord</a>
+                <a href="/download">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>HOMEWORK HELPERS</h1>
+            <p class="subtitle">We integrate AI and NON-AI into our applications to get accurate answers to help out with your homeworks. Worry no more about Sparx or Seneca.</p>
+        </header>
+
+        <section class="products">
+            <div class="product-card">
+                <h2>AALDEV-SPARX MATHS</h2>
+                <p>Simply press the Solve button to get answers to non-image questions. For image-based questions, copy the screenshot and utilize our Gauthmath integration to receive accurate solutions instantly.</p>
+            </div>
+
+            <div class="product-card">
+                <h2>AALDEV-SPARX READER</h2>
+                <p>Experience the best usage of AI by the SRP team. Our Sparx reader integrates cutting-edge AI technology to comprehend your story and provide accurate answers efficiently.</p>
+            </div>
+
+            <div class="product-card">
+                <h2>AALDEV-SPARX SCIENCE</h2>
+                <p>Coming Soon! We've recently identified the need for a Sparx Science solution and are working diligently to bring you the same level of excellence in science homework assistance.</p>
+            </div>
+
+            <div class="product-card">
+                <h2>SRPGUY SENECA</h2>
+                <p>Get instant answers for your Seneca assignments with our automated solution. Our tool streamlines your homework process by providing accurate answers automatically.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
