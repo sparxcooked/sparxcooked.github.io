@@ -86,57 +86,39 @@
         }
 
         .downloads {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .product-section {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .product {
+            margin-bottom: 3rem;
             animation: slideUp 0.5s ease-out forwards;
-            position: relative;
-            overflow: hidden;
+            opacity: 0;
         }
 
-        .product-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #6c5ce7;
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
+        .product:nth-child(1) { animation-delay: 0.1s; }
+        .product:nth-child(2) { animation-delay: 0.2s; }
+        .product:nth-child(3) { animation-delay: 0.3s; }
+        .product:nth-child(4) { animation-delay: 0.4s; }
 
-        .product-section:hover::before {
-            transform: translateX(0);
-        }
-
-        .product-section h2 {
-            color: #2d3436;
-            margin-bottom: 1.5rem;
+        .product-name {
             font-size: 1.8rem;
-        }
-
-        .download-group {
-            margin-top: 1.5rem;
-        }
-
-        .download-group h3 {
             color: #2d3436;
-            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .product-status {
+            font-size: 1.1rem;
+            color: #e17055;
             margin-bottom: 1rem;
         }
 
-        .download-links {
+        .product-links {
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
+            margin-left: 1rem;
         }
 
         .download-link {
@@ -146,6 +128,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 1.1rem;
         }
 
         .download-link:hover {
@@ -165,7 +148,7 @@
         @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -192,6 +175,11 @@
             h1 {
                 font-size: 2.5rem;
             }
+
+            .container {
+                padding: 1rem;
+                padding-top: 6rem;
+            }
         }
     </style>
 </head>
@@ -213,55 +201,42 @@
         </header>
 
         <section class="downloads">
-            <div class="product-section">
-                <h2>AALDEV-SPARX MATHS</h2>
-                <div class="download-group">
-                    <h3>Browser Extensions</h3>
-                    <div class="download-links">
-                        <a href="#chrome-store-link" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
-                        <a href="#firefox-store-link" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
-                    </div>
-                </div>
-                <div class="download-group">
-                    <h3>Desktop Application</h3>
-                    <div class="download-links">
-                        <a href="#windows-link" class="download-link">Windows x64 (.exe)</a>
-                        <a href="#linux-deb-link" class="download-link">Linux x64 (.deb)</a>
-                        <a href="#linux-appimage-link" class="download-link">Linux x64 (.AppImage)</a>
-                    </div>
+            <div class="product">
+                <h2 class="product-name">AALDEV-SPARX MATHS</h2>
+                <p class="product-status">NYR (Not Yet Released)</p>
+                <div class="product-links">
+                    <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
+                    <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
+                    <a href="/nyr" class="download-link">Install .exe (Windows x64)</a>
+                    <a href="/nyr" class="download-link">Install .deb (Linux x64)</a>
+                    <a href="/nyr" class="download-link">Install .AppImage (Linux x64)</a>
                 </div>
             </div>
 
-            <div class="product-section">
-                <h2>AALDEV-SPARX READER</h2>
-                <div class="download-group">
-                    <h3>Browser Extensions</h3>
-                    <div class="download-links">
-                        <a href="#chrome-store-link" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
-                        <a href="#firefox-store-link" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
-                    </div>
+            <div class="product">
+                <h2 class="product-name">AALDEV-SPARX READER</h2>
+                <p class="product-status">NYR (Not Yet Released)</p>
+                <div class="product-links">
+                    <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
+                    <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
                 </div>
             </div>
 
-            <div class="product-section">
-                <h2>AALDEV-SPARX SCIENCE</h2>
-                <div class="download-group">
-                    <h3>Browser Extensions</h3>
-                    <div class="download-links">
-                        <a href="#chrome-store-link" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
-                        <a href="#firefox-store-link" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
-                    </div>
+            <div class="product">
+                <h2 class="product-name">AALDEV-SPARX SCIENCE</h2>
+                <p class="product-status">NYR (Not Yet Released)</p>
+                <div class="product-links">
+                    <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
+                    <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
                 </div>
             </div>
 
-            <div class="product-section">
-                <h2>SRPGUY SENECA</h2>
-                <div class="download-group">
-                    <h3>Browser Extensions</h3>
-                    <div class="download-links">
-                        <a href="#chrome-store-link" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
-                        <a href="#firefox-store-link" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
-                    </div>
+            <div class="product">
+                <h2 class="product-name">SRPGUY SENECA</h2>
+                <p class="product-status">NYR (Not Yet Released)</p>
+                <div class="product-links">
+                    <a href="/nyr" class="download-link">Chrome Web Store (Chrome, Opera, Brave, Vivaldi)</a>
+                    <a href="/nyr" class="download-link">AMO - Firefox Add-ons (Firefox, Librewolf, Waterfox)</a>
                 </div>
             </div>
         </section>
