@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="We integrate AI and NON-AI into our applications to get accurate answers to help out with your homeworks. Worry no more about Sparx or Seneca.">
-    <title>HOMEWORK HELPERS</title>
+    <title>SrpGuy Homework Helpers</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
@@ -16,14 +16,15 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
             min-height: 100vh;
+            color: #2d3436;
         }
 
         .navbar {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 1rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -41,9 +42,11 @@
 
         .logo {
             font-weight: 700;
-            color: #2c3e50;
+            color: #000;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .nav-links {
@@ -52,14 +55,15 @@
         }
 
         .nav-links a {
-            color: #34495e;
+            color: #000;
             text-decoration: none;
             transition: color 0.3s ease;
             font-weight: 500;
+            padding: 0.5rem 1rem;
         }
 
         .nav-links a:hover {
-            color: #2980b9;
+            color: #6c5ce7;
         }
 
         .container {
@@ -77,14 +81,14 @@
 
         h1 {
             font-size: 3.5rem;
-            color: #2c3e50;
+            color: #2d3436;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         .subtitle {
             font-size: 1.2rem;
-            color: #34495e;
+            color: #2d3436;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.6;
@@ -101,33 +105,65 @@
         }
 
         .product-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
             animation: slideUp 0.5s ease-out forwards;
             opacity: 0;
-            height: 250px; /* Fixed height */
+            height: 250px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #6c5ce7;
+        }
+
+        .product-card:nth-child(odd)::before {
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:nth-child(even)::before {
+            transform: translateX(100%);
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:nth-child(odd):hover::before {
+            transform: translateX(0);
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:nth-child(even):hover::before {
+            transform: translateX(0);
+            transition: transform 0.6s ease;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .product-card h2 {
-            color: #2c3e50;
+            color: #2d3436;
             margin-bottom: 1rem;
             font-size: 1.5rem;
             flex-shrink: 0;
         }
 
         .product-card p {
-            color: #7f8c8d;
+            color: #2d3436;
             line-height: 1.6;
             flex-grow: 1;
         }
@@ -207,7 +243,7 @@
 
     <div class="container">
         <header>
-            <h1>HOMEWORK HELPERS</h1>
+            <h1>SrpGuy Homework Helpers</h1>
             <p class="subtitle">We integrate AI and NON-AI into our applications to get accurate answers to help out with your homeworks. Worry no more about Sparx or Seneca.</p>
         </header>
 
