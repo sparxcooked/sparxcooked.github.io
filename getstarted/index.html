@@ -22,6 +22,7 @@
         h1 { font-size: 3rem; color: #2d3436; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
         .subtitle { font-size: 1.2rem; color: #2d3436; margin-bottom: 2.2rem; line-height: 1.6; }
         .summary { font-size: 1.1rem; color: #2d3436; margin-bottom: 1.5rem; }
+        .refcode { font-size: 1.15rem; color: #6c5ce7; font-weight: 700; margin-bottom: 1.5rem; }
         .snap-link { display: inline-block; background: #6c5ce7; color: #fff; padding: 1rem 2.2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3); font-size: 1.1rem; margin-top: 1.5rem; }
         .snap-link:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(108, 92, 231, 0.4); background: #5f48bd; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -64,6 +65,7 @@
                 Loading...
             </div>
             <div class="summary" id="summary"></div>
+            <div class="refcode" id="refcode"></div>
             <a class="snap-link" href="https://www.snapchat.com/add/tyronethekala" target="_blank" rel="noopener">
                 @tyronethekala
             </a>
@@ -71,7 +73,6 @@
     </div>
 
     <script>
-        // Hamburger menu
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => {
@@ -85,7 +86,6 @@
             });
         });
 
-        // Plan and extension definitions
         const plans = {
             "one-at-a-time": {
                 name: "One a time",
@@ -114,7 +114,13 @@
             }
         };
 
-        // Parse URL params
+        function getRefCode(planKey, extKey) {
+            if (planKey === "one-at-a-time" && extKey === "top-of-leaderboard") return "1ATOL";
+            if (planKey === "duo-set" && extKey === "top-of-leaderboard") return "DSTOL";
+            if (planKey === "all-in-one" && extKey === "top-of-leaderboard") return "AOTOL";
+            return null;
+        }
+
         function getParams() {
             const params = {};
             window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str,key,value) {
@@ -140,20 +146,24 @@
             summary += `<br><strong>Total: £${total}</strong>`;
             document.getElementById("subtitle").innerHTML = subtitle;
             document.getElementById("summary").innerHTML = summary;
+
+            const ref = getRefCode(planKey, extKey);
+            if (ref) {
+                document.getElementById("refcode").innerHTML = `Show this reference code to Tyrone on Snapchat: <span style="background:#f1f2f6;padding:0.2em 0.7em;border-radius:8px;">${ref}</span>`;
+            } else {
+                document.getElementById("refcode").innerHTML = "";
+            }
         }
 
-        // Main logic
         (function() {
             const params = getParams();
             const planKey = params.plan;
             const extKey = params.ext;
 
-            // Validate plan
             if (!planKey || !(planKey in plans)) {
                 window.location.href = "/pricing";
                 return;
             }
-            // Validate extension if present
             if (extKey && !(extKey in extensions)) {
                 window.location.href = "/pricing";
                 return;
