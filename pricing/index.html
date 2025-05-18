@@ -7,330 +7,62 @@
     <title>Pricing | SCooked Homework Helpers</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-            min-height: 100vh;
-            color: #2d3436;
-            overflow-x: hidden;
-        }
-        .navbar {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            animation: slideDown 0.5s ease;
-        }
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-weight: 700;
-            color: #6c5ce7;
-            text-decoration: none;
-            font-size: 1.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            z-index: 1001;
-            transition: color 0.3s;
-        }
-        .logo:hover {
-            color: #2d3436;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-            position: relative;
-            z-index: 1001;
-        }
-        .hamburger span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background-color: #6c5ce7;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        .nav-links a {
-            color: #2d3436;
-            text-decoration: none;
-            transition: color 0.3s ease, background 0.3s;
-            font-weight: 500;
-            padding: 0.5rem 1.2rem;
-            border-radius: 30px;
-        }
-        .nav-links a:hover {
-            color: #fff;
-            background: #6c5ce7;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            padding-top: 6rem;
-        }
-        header {
-            text-align: center;
-            padding: 4rem 0 2rem 0;
-            animation: fadeIn 1s ease-in;
-        }
-        h1 {
-            font-size: 3.2rem;
-            color: #6c5ce7;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(108, 92, 231, 0.08);
-            font-weight: 700;
-        }
-        .subtitle {
-            font-size: 1.25rem;
-            color: #636e72;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-            line-height: 1.7;
-        }
-        .pricing-section {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 2.5rem;
-            margin: 2rem auto 3rem auto;
-            flex-wrap: wrap;
-            max-width: 1100px;
-        }
-        .pricing-card {
-            background: linear-gradient(135deg, #fff 70%, #f3f0ff 100%);
-            border-radius: 22px;
-            padding: 2.5rem 2rem 2rem 2rem;
-            box-shadow: 0 10px 32px rgba(108, 92, 231, 0.10), 0 2px 8px rgba(0,0,0,0.03);
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-            min-width: 270px;
-            max-width: 320px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            overflow: hidden;
-            animation: slideUp 0.5s ease-out forwards;
-            opacity: 0;
-        }
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #6c5ce7 0%, #a29bfe 100%);
-        }
-        .pricing-card:hover {
-            transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 20px 48px rgba(108, 92, 231, 0.18), 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .pricing-card h2 {
-            color: #2d3436;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        .pricing-card p {
-            color: #636e72;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-            font-size: 1.08rem;
-        }
-        .pricing-card .price {
-            font-size: 2.3rem;
-            color: #6c5ce7;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-        }
-        .pricing-card .duration {
-            color: #636e72;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .action-btn {
-            display: inline-block;
-            background: linear-gradient(90deg, #6c5ce7 60%, #a29bfe 100%);
-            color: white;
-            padding: 1rem 2.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.18);
-            margin-top: 2.5rem;
-            font-size: 1.08rem;
-            border: none;
-        }
-        .action-btn:hover {
-            transform: translateY(-5px) scale(1.04);
-            box-shadow: 0 15px 25px rgba(108, 92, 231, 0.22);
-            background: linear-gradient(90deg, #a29bfe 0%, #6c5ce7 100%);
-        }
-        .getstarted-section {
-            text-align: center;
-            margin-top: 3.5rem;
-            margin-bottom: 2rem;
-        }
-        .getstarted-section p {
-            font-size: 1.15rem;
-            margin-bottom: 1.1rem;
-            color: #2d3436;
-        }
-        .extensions-dropdown {
-            margin-top: 1rem;
-            width: 100%;
-        }
-        .dropdown-toggle {
-            background: #f1f2f6;
-            border: none;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            width: 100%;
-            text-align: left;
-            font-weight: 600;
-            color: #6c5ce7;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.2s ease;
-            font-size: 1.05rem;
-            margin-bottom: 0.5rem;
-        }
-        .dropdown-toggle:hover {
-            background: #e0e0fa;
-        }
-        .dropdown-toggle::after {
-            content: "▼";
-            font-size: 0.8rem;
-            transition: transform 0.3s ease;
-        }
-        .dropdown-toggle.active::after {
-            transform: rotate(180deg);
-        }
-        .extensions-content {
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin-top: 0.5rem;
-            padding: 1rem;
-            display: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(108, 92, 231, 0.07);
-        }
-        .extensions-content.show {
-            display: block;
-        }
-        .extension-option {
-            margin-bottom: 0.75rem;
-        }
-        .extension-option label {
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
-            cursor: pointer;
-            color: #2d3436;
-        }
-        .extension-option input {
-            margin-right: 0.5rem;
-            accent-color: #6c5ce7;
-        }
-        .total-cost {
-            margin-top: 1.2rem;
-            font-weight: 600;
-            font-size: 1.08rem;
-            color: #6c5ce7;
-            display: flex;
-            justify-content: space-between;
-        }
-        .checkout-btn {
-            display: inline-block;
-            background: linear-gradient(90deg, #6c5ce7 60%, #a29bfe 100%);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 18px rgba(108, 92, 231, 0.13);
-            margin-top: 1.2rem;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
-        }
-        .checkout-btn:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 15px 25px rgba(108, 92, 231, 0.18);
-            background: linear-gradient(90deg, #a29bfe 0%, #6c5ce7 100%);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        @keyframes slideDown {
-            from { transform: translateY(-100%);}
-            to { transform: translateY(0);}
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); min-height: 100vh; color: #2d3436; overflow-x: hidden; }
+        .navbar { background: rgba(255, 255, 255, 0.95); padding: 1rem 2rem; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); position: fixed; width: 100%; top: 0; z-index: 1000; animation: slideDown 0.5s ease; }
+        .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; color: #000; text-decoration: none; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; z-index: 1001; }
+        .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 30px; height: 21px; cursor: pointer; position: relative; z-index: 1001; }
+        .hamburger span { display: block; height: 3px; width: 100%; background-color: #000; transition: all 0.3s ease; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: #000; text-decoration: none; transition: color 0.3s ease; font-weight: 500; padding: 0.5rem 1rem; }
+        .nav-links a:hover { color: #6c5ce7; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; padding-top: 6rem; }
+        header { text-align: center; padding: 4rem 0 2rem 0; animation: fadeIn 1s ease-in; }
+        h1 { font-size: 3.5rem; color: #2d3436; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .subtitle { font-size: 1.2rem; color: #2d3436; max-width: 800px; margin: 0 auto 2rem auto; line-height: 1.6; }
+        .pricing-section { display: flex; justify-content: center; align-items: flex-start; gap: 2rem; margin: 2rem auto 3rem auto; flex-wrap: wrap; max-width: 1100px; }
+        .pricing-card { background: rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 2.5rem 2rem 2rem 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; min-width: 270px; max-width: 320px; width: 100%; display: flex; flex-direction: column; align-items: flex-start; position: relative; overflow: hidden; animation: slideUp 0.5s ease-out forwards; opacity: 0; }
+        .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #6c5ce7; }
+        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
+        .pricing-card h2 { color: #2d3436; margin-bottom: 1rem; font-size: 1.6rem; font-weight: 700; }
+        .pricing-card p { color: #2d3436; line-height: 1.5; margin-bottom: 1.5rem; font-size: 1.08rem; }
+        .pricing-card .price { font-size: 2.2rem; color: #6c5ce7; font-weight: 700; margin-bottom: 0.2rem; }
+        .pricing-card .duration { color: #636e72; font-size: 1rem; margin-bottom: 1.5rem; }
+        .action-btn { display: inline-block; background: #6c5ce7; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3); margin-top: 2.5rem; font-size: 1.08rem; }
+        .action-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(108, 92, 231, 0.4); }
+        .getstarted-section { text-align: center; margin-top: 3.5rem; margin-bottom: 2rem; }
+        .getstarted-section p { font-size: 1.15rem; margin-bottom: 1.1rem; color: #2d3436; }
+        .extensions-dropdown { margin-top: 1rem; width: 100%; }
+        .dropdown-toggle { background: #f1f2f6; border: none; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; text-align: left; font-weight: 600; color: #2d3436; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; }
+        .dropdown-toggle:hover { background: #dfe6e9; }
+        .dropdown-toggle::after { content: "▼"; font-size: 0.8rem; transition: transform 0.3s ease; }
+        .dropdown-toggle.active::after { transform: rotate(180deg); }
+        .extensions-content { background: #f8f9fa; border-radius: 8px; margin-top: 0.5rem; padding: 1rem; display: none; transition: all 0.3s ease; }
+        .extensions-content.show { display: block; }
+        .extension-option { margin-bottom: 0.75rem; }
+        .extension-option label { display: flex; align-items: center; font-size: 0.95rem; cursor: pointer; }
+        .extension-option input { margin-right: 0.5rem; }
+        .total-cost { margin-top: 1.5rem; font-weight: 600; font-size: 1.1rem; color: #6c5ce7; display: flex; justify-content: space-between; }
+        .checkout-btn { display: inline-block; background: #6c5ce7; color: white; padding: 0.75rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3); margin-top: 1.5rem; font-size: 1rem; border: none; cursor: pointer; width: 100%; text-align: center; }
+        .checkout-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(108, 92, 231, 0.4); }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
         .pricing-section .pricing-card:nth-child(1) { animation-delay: 0.2s; }
         .pricing-section .pricing-card:nth-child(2) { animation-delay: 0.4s; }
         .pricing-section .pricing-card:nth-child(3) { animation-delay: 0.6s; }
-        @media (max-width: 1020px) {
-            .pricing-section { flex-direction: column; align-items: center; }
-        }
+        @media (max-width: 1020px) { .pricing-section { flex-direction: column; align-items: center; } }
         @media (max-width: 768px) {
             .hamburger { display: flex; }
             .nav-content { justify-content: space-between; flex-direction: row; }
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                height: 100vh;
-                width: 70%;
-                background: rgba(255, 255, 255, 0.98);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: right 0.3s ease;
-                z-index: 1000;
-                gap: 2rem;
-            }
+            .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; width: 70%; background: rgba(255, 255, 255, 0.98); flex-direction: column; justify-content: center; align-items: center; transition: right 0.3s ease; z-index: 1000; gap: 2rem; }
             .nav-links.active { right: 0; }
             .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
             .hamburger.active span:nth-child(2) { opacity: 0; }
             .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
             .navbar { padding: 1rem; }
-            h1 { font-size: 2.1rem; }
-            .pricing-section { gap: 1.2rem; }
-            .pricing-card { padding: 2rem 1rem 1.5rem 1rem; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
