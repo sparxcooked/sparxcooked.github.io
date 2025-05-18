@@ -194,6 +194,27 @@
             flex-grow: 1;
         }
 
+        /* Button style inspired by .home-btn in 404.html */
+        .view-btn {
+            display: inline-block;
+            background: #6c5ce7;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+            margin-top: 1.5rem;
+            /* prevent shrinking */
+            flex-shrink: 0;
+            align-self: flex-start;
+        }
+        .view-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(108, 92, 231, 0.4);
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -311,21 +332,25 @@
             <div class="product-card">
                 <h2><a href="/download">SCOOKED-SPARX MATHS</a></h2>
                 <p>Our Aaldev AI will easily complete your homework with full bookworks.</p>
+                <a class="view-btn" href="/maths">View</a>
             </div>
 
             <div class="product-card">
                 <h2><a href="/download">SCOOKED-SPARX READER</a></h2>
                 <p>Our AI chat has been integrated to make sure the stories are completed really quickly.</p>
+                <a class="view-btn" href="/reader">View</a>
             </div>
 
             <div class="product-card">
                 <h2><a href="/download">SCOOKED-SPARX SCIENCE</a></h2>
                 <p>Recently made version 1.0 with the current accuracy being 87.3%.</p>
+                <a class="view-btn" href="/science">View</a>
             </div>
 
             <div class="product-card">
                 <h2><a href="/download">SCOOKED-MORE</a></h2>
                 <p>Our AI can complete your Seneca, Carousel, Bedrock aswell..</p>
+                <a class="view-btn" href="/other">View</a>
             </div>
         </section>
     </div>
