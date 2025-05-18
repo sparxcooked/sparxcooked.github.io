@@ -23,4 +23,4 @@
  - OCR (optical character recognition)
  - Custom Prompts supported
 
-Copyright © 2025 SRPGUY. All rights reserved.
+Copyright © 2025 SCooked. All rights reserved.
